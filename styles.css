@@ -1,0 +1,153 @@
+/* Animation Base Styles */
+[data-aos] {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: none !important;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container and Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/bg_blue.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Logo Styles */
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, #2196F3, #00bcd4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Animation Overrides */
+[data-aos][data-aos-duration="800"] {
+    transition-duration: 800ms;
+}
+
+[data-aos][data-aos-duration="1000"] {
+    transition-duration: 1000ms;
+}
+
+[data-aos][data-aos-duration="1200"] {
+    transition-duration: 1200ms;
+}
+
+[data-aos][data-aos-delay="100"] {
+    transition-delay: 0s;
+}
+
+[data-aos][data-aos-delay="100"].aos-animate {
+    transition-delay: 100ms;
+}
+
+[data-aos][data-aos-delay="200"] {
+    transition-delay: 0s;
+}
+
+[data-aos][data-aos-delay="200"].aos-animate {
+    transition-delay: 200ms;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    body {
+        animation: none;
+        opacity: 1;
+    }
+
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}

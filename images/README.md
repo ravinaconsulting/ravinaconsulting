@@ -1,0 +1,1 @@
+Place your bg_blue.jpg file in this directory for it to be properly referenced by the website.
